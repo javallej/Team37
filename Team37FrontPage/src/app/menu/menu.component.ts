@@ -8,14 +8,9 @@ import {Router} from "@angular/router";
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private router : Router) {}
+  constructor() {}
 
   ngOnInit(): void {
   }
-
-  UsersAdminRoute(){
-    this.router.navigate(['admin','users']);
-
-}
 
 }
