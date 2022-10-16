@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DataService} from "../../data.service";
 import {User} from "../../model/User";
 
@@ -9,16 +9,18 @@ import {User} from "../../model/User";
 })
 export class UsersComponent implements OnInit {
 
-  users: Array<User> = new Array<User>();
+  @Input()
+  user: User = new User();
 
-  constructor(private dataService : DataService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
-    this.dataService.getUsers().subscribe(
-      (next) =>{
-        this.users = next;}
-    )
+
+  }
+
+  onSubmit() {
+    console.log(this.user)
   }
 
 }
