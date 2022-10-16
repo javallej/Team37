@@ -9,7 +9,7 @@ import {User} from "../../model/User";
 })
 export class UsersComponent implements OnInit {
 
-  users:User = new User;
+  users: Array<User> = new Array<User>();
 
   constructor(private dataService : DataService) { }
 
