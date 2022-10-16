@@ -15,7 +15,10 @@ export class HomepageComponent implements OnInit {
   constructor(private dataService : DataService) { }
 
   ngOnInit(): void {
-    this.users = this.dataService.users;
+    this.dataService.getUsers().subscribe(
+      (next) =>{
+        this.users = next;}
+    )
   }
 
 
