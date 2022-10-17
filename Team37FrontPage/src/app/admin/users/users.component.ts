@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DataService} from "../../data.service";
 import {User} from "../../model/User";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-users',
@@ -12,7 +13,7 @@ export class UsersComponent implements OnInit {
   @Input()
   user: User = new User();
 
-  constructor() { }
+  constructor(private ds : DataService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -20,7 +21,7 @@ export class UsersComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.user)
+  console.log(this.user.name)
   }
 
 }

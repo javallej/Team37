@@ -9,13 +9,9 @@ import { UsersComponent } from './admin/users/users.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {FormsModule} from "@angular/forms";
+import {AppRoutingModule} from "./app-routing.module";
 
-const routes: Routes = [
-  {path : 'admin/users', component : UsersComponent},
-  {path : '', component : HomepageComponent},
-  {path : '404', component : PageNotFoundComponent},
-  {path : '**', redirectTo : '/404'}
-];
+
 
 @NgModule({
   declarations: [
@@ -28,7 +24,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
+    AppRoutingModule,
     FormsModule
   ],
   providers: [],
