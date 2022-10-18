@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DataService} from "../../data.service";
 import {User} from "../../model/User";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-users',
@@ -12,15 +13,17 @@ export class UsersComponent implements OnInit {
   @Input()
   user: User = new User();
 
-  constructor() { }
+  constructor(private ds : DataService, private router: Router) { }
 
   ngOnInit(): void {
 
 
   }
 
+
   onSubmit() {
-    console.log(this.user)
+    this.ds.addUser(this.user.name, this.user.email, this.user.password)
+    this.router.navigate(['']);
   }
 
 }
