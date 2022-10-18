@@ -20,8 +20,10 @@ export class UsersComponent implements OnInit {
 
   }
 
+
   onSubmit() {
-  console.log(this.user.name)
+    this.ds.addUser(this.user.name, this.user.email, this.user.password)
+    this.router.navigate(['']);
   }
 
 }

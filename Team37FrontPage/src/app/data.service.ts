@@ -9,10 +9,21 @@ export class DataService {
 
   private users: Array<User> = new Array<User>();
 
+
   getUsers() : Observable<Array<User>> {
     return of(this.users);
   }
 
+  addUser(Iname: string, Iemail: string, Ipassword: string){
+    let datauser = new User();
+    datauser.name = Iname;
+    datauser.email = Iemail;
+    datauser.password = Ipassword;
+
+    this.users.push(datauser);
+
+
+}
   constructor() {
 
     const user1 = new User();
